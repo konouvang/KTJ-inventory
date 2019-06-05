@@ -4,6 +4,7 @@ import loginMode from './loginModeReducer';
 import user from './userReducer';
 import secrets from './secretsReducer';
 import alluserReducer from './alluserReducer';
+import inventoryReducer from './inventoryReducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   user, // will have an id and username if someone is logged in
   secrets,
   alluserReducer,
+  inventoryReducer,
 });
 
 export default rootReducer;
