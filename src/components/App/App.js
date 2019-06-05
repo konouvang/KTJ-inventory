@@ -17,6 +17,8 @@ import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
 import SecretsPage from '../SecretsPage/SecretsPage';
 import AllUsersPage from '../AllUsersPage/AllUsersPage';
+import MasterData from '../MasterData/MasterData';
+
 
 
 import './App.css';
@@ -62,6 +64,12 @@ class App extends Component {
               exact
               path="/allusers"
               component={AllUsersPage}
+            />
+
+            <ProtectedRoute
+              exact
+              path="/masterdata"
+              component={MasterData}
             />
             {/* If none of the other routes matched, we will show a 404. */}
             <Route render={() => <h1>404</h1>} />
