@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import mapStateToProps from '../../modules/mapStateToProps';
 // import LogOutButton from '../LogOutButton/LogOutButton';
 
 
@@ -13,22 +14,7 @@ class UserPage extends Component {
 
     render() {
         console.log(this.props.reduxState.inventoryReducer);
-        // const pizzaHTML = this.props.reduxState.pizzaAdminOrderReducer.map((pizza, index) => {
-        //     return (
-
-
-        // <tbody>
-        //     <tr>
-        //         <td scope="row">{pizza.customer_name}</td>
-        //         <td>{pizza.time}</td>
-        //         <td>{pizza.type}</td>
-        //         <td>{pizza.total}</td>
-        //     </tr>
-        // </tbody>
-    
-
-          //   )
-          // })
+       
         return (
             <div>
                 <table class="table">
@@ -40,19 +26,13 @@ class UserPage extends Component {
                             <th scope="col">Cost</th>
                         </tr>
                     </thead>
-                {/* {pizzaHTML} */}
                 </table>
             </div>
         )
     }
 }
 
-const mapReduxStateToProps = (reduxState) => {
-    return {
-      reduxState
-    }
-  }
-// export default connect(mapReduxStateToProps)(UserPage);
+
 
 ////THIS WILL BE THE DASHBOARD!!!!!!!!!!
 
@@ -72,9 +52,6 @@ const mapReduxStateToProps = (reduxState) => {
 // Instead of taking everything from state, we just want the user info.
 // if you wanted you could write this code like this:
 // const mapStateToProps = ({user}) => ({ user });
-const mapStateToProps = state => ({
-  user: state.user,
-});
 
 // this allows us to use <App /> in index.js
 export default connect(mapStateToProps)(UserPage);
