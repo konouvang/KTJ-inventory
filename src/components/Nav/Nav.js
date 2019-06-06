@@ -4,17 +4,22 @@ import { connect } from 'react-redux';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
 
+// import React, { Component } from 'react';
+
+
+
 const Nav = (props) => (
   <div className="nav">
     <Link to="/home">
-      <h2 className="nav-title">KTJ Inventory</h2>
+    <img src="/images/user-icon.PNG" className="imgicon" /> 
+      {/* {this.props.alluserReducer} */}
     </Link>
     <div className="nav-right">
-      <Link className="nav-link" to="/home">
+      <Link className="nav-link-home" to="/home">
         {/* Show this link if they are logged in or not,
         but call this link 'Home' if they are logged in,
         and call this link 'Login / Register' if they are not */}
-        {props.user.id ? 'Home' : 'Login / Register'}
+        {props.user.id ? 'Dash Board' : 'Login / Register'}
       </Link>
       {/* Show the link to the info page and the logout button if the user is logged in */}
       {props.user.id && (
@@ -35,6 +40,9 @@ const Nav = (props) => (
       <Link className="nav-link" to="/about">
         About
       </Link>
+      <Link to="/home">
+    <img src="/images/home-icon.PNG" className="imgicon" /> 
+    </Link>
     </div>
   </div>
 );
@@ -46,6 +54,8 @@ const Nav = (props) => (
 // const mapStateToProps = ({ user }) => ({ user });
 const mapStateToProps = state => ({
   user: state.user,
+  alluserReducer: state.alluserReducer,
+
 });
 
 export default connect(mapStateToProps)(Nav);
