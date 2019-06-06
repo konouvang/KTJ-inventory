@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStateToProps from '../../modules/mapStateToProps';
-// import LogOutButton from '../LogOutButton/LogOutButton';
 
+// import LogOutButton from '../LogOutButton/LogOutButton';
+import './MasterData.css';
 
 
 class MasterData extends Component {
@@ -18,8 +19,6 @@ class MasterData extends Component {
           return (
       <tbody>
           <tr>
-              <td scope="row">{inventory.name}</td>
-              <td>{inventory.id}</td>
               <td>{inventory.batch}</td>
               <td>{inventory.name}</td>
               <td>{inventory.product_line}</td>
@@ -45,7 +44,6 @@ class MasterData extends Component {
                 <table className="table">
                     <thead>
                         <tr>
-                            <th scope="col">id</th>
                             <th scope="col">Batch</th>
                             <th scope="col">Name</th>
                             <th scope="col">Product Line</th>

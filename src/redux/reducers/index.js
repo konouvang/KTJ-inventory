@@ -5,6 +5,7 @@ import user from './userReducer';
 import secrets from './secretsReducer';
 import alluserReducer from './alluserReducer';
 import inventoryReducer from './inventoryReducer';
+import entryReducer from './entryReducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
   secrets,
   alluserReducer,
   inventoryReducer,
+  entryReducer,
 });
 
 export default rootReducer;
