@@ -6,6 +6,7 @@ import secretsSaga from './secretsSaga';
 import alluserSaga from './alluserSaga';
 import inventorySaga from './inventorySaga';
 import entrySaga from './entrySaga';
+import updatesaga from './updateSaga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -23,5 +24,6 @@ export default function* rootSaga() {
     alluserSaga(),
     inventorySaga(),
     entrySaga(),
+    updatesaga(),
   ]);
 }
