@@ -18,10 +18,11 @@ import UserPage from '../UserPage/UserPage';
 import SecretsPage from '../SecretsPage/SecretsPage';
 import AllUsersPage from '../AllUsersPage/AllUsersPage';
 import MasterData from '../MasterData/MasterData';
-
+import Entry from '../Entry/Entry';
 
 
 import './App.css';
+
 
 class App extends Component {
   componentDidMount () {
@@ -58,6 +59,12 @@ class App extends Component {
               exact
               path="/secrets"
               component={SecretsPage}
+            />
+
+            <ProtectedRoute
+              exact
+              path="/entry"
+              component={Entry}
             />
 
             <ProtectedRoute

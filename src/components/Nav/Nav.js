@@ -28,6 +28,9 @@ class Nav extends Component {
           <Link className="nav-link" to="/secrets">
             Secrets Page
           </Link>
+          <Link className="nav-link" to="/entry">
+            Entry Page
+          </Link>
           <Link className="nav-link" to="/allusers">
             All User
           </Link>

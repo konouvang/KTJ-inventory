@@ -1,4 +1,4 @@
-const entryReducer = (state = [], action) => {
+const entryReducer = (state = {}, action) => {
     switch (action.type) {
       case 'SET_INVENTORY':
         return action.payload;

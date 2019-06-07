@@ -1,18 +1,13 @@
 import axios from 'axios';
 import { put, takeLatest } from 'redux-saga/effects';
 
-// worker Saga: will be fired on "FETCH_INVENTORY" actions
+
 function* postInventory(action) {
-    const imageId = action.payload.imageId;
     try {
-        yield Axios.post('/api/inventory', action.payload);
-        const newPayload = {
-            ...action.payload,
-            id: action.payload.id
-        }
+        console.log('postInventory - action.payload: ', action.payload);
+        yield axios.post('/api/inventory', action.payload);
         yield put({
             type: 'GET_INVENTORY',
-            payload: newPay,
         });
     } catch (error) {
         console.log('error HELP:', error);
