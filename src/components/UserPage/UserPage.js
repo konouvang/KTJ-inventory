@@ -18,23 +18,24 @@ class UserPage extends Component {
           return (
       <tbody>
           <tr>
-              <td scope="row">{inventory.name}</td>
-              <td>{inventory.id}</td>
-              <td>{inventory.batch}</td>
-              <td>{inventory.name}</td>
-              <td>{inventory.product_line}</td>
-              <td>{inventory.length}</td>
-              <td>{inventory.texture}</td>
-              <td>{inventory.color}</td>
-              <td>{inventory.hair_type}</td>
-              <td>{inventory.region_type}</td>
-              <td>{inventory.factory}</td>
-              <td>{inventory.current_location}</td>
-              <td>{inventory.quantity}</td>
-              <td>{inventory.cost_of_batch}</td>
-              <td>{inventory.price_per_unit}</td>
-              <td>{inventory.photos}</td>
-              <td>{inventory.qr_code}</td>
+              <td scope="row">
+                <p>{inventory.id}</p>
+                <p>{inventory.batch}</p>
+                <p>{inventory.name}</p>
+                <p>{inventory.product_line}</p>
+                <p>{inventory.length}</p>
+                <p>{inventory.texture}</p>
+                <p>{inventory.color}</p>
+                <p>{inventory.hair_type}</p>
+                <p>{inventory.region_type}</p>
+                <p>{inventory.factory}</p>
+                <p>{inventory.current_location}</p>
+                <p>{inventory.quantity}</p>
+                <p>{inventory.cost_of_batch}</p>
+                <p>{inventory.price_per_unit}</p>
+                <p>{inventory.photos}</p>
+                <p>{inventory.qr_code}</p>
+              </td>
           </tr>
       </tbody>
   
@@ -45,22 +46,7 @@ class UserPage extends Component {
                 <table className="table">
                     <thead>
                         <tr>
-                            <th scope="col">id</th>
-                            <th scope="col">Batch</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Product Line</th>
-                            <th scope="col">Length</th>
-                            <th scope="col">Texture</th>
-                            <th scope="col">Color</th>
-                            <th scope="col">Hair Type</th>
-                            <th scope="col">Region Type</th>
-                            <th scope="col">Factory</th>
-                            <th scope="col">Current Location</th>
-                            <th scope="col">Quantity</th>
-                            <th scope="col">Cost of Batch</th>
-                            <th scope="col">Price per Unit</th>
-                            <th scope="col">Photos</th>
-                            <th scope="col">QR Code</th>
+                            <th scope="col"></th>
                         </tr>
                     </thead>
                     {inventoryHTML}

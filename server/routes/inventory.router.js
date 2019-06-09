@@ -124,8 +124,7 @@ router.put('/:id', (req, res) => {
                                             price_per_unit = $13,
                                             photos = $14,
                                             qr_code = $15
-                                            WHERE id = $16;`;
-                                            
+                                            WHERE id = $16;`;                                           
     const queryValues = [
         batch,
         name,
@@ -142,7 +141,7 @@ router.put('/:id', (req, res) => {
         price_per_unit,
         photos,
         qr_code,
-        req.param.id
+        req.params.id
     ];
     console.log('queryValues: ', queryValues);
     pool.query(queryText, queryValues)
