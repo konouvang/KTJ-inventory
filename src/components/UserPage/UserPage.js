@@ -19,22 +19,22 @@ class UserPage extends Component {
       <tbody>
           <tr>
               <td scope="row">
-                <p>{inventory.id}</p>
-                <p>{inventory.batch}</p>
-                <p>{inventory.name}</p>
-                <p>{inventory.product_line}</p>
-                <p>{inventory.length}</p>
-                <p>{inventory.texture}</p>
-                <p>{inventory.color}</p>
-                <p>{inventory.hair_type}</p>
-                <p>{inventory.region_type}</p>
-                <p>{inventory.factory}</p>
-                <p>{inventory.current_location}</p>
-                <p>{inventory.quantity}</p>
-                <p>{inventory.cost_of_batch}</p>
-                <p>{inventory.price_per_unit}</p>
-                <p>{inventory.photos}</p>
-                <p>{inventory.qr_code}</p>
+              <p>{inventory.id}</p>
+              <p>{inventory.batch}</p>
+              <p>{inventory.name}</p>
+              <p>{inventory.product_line}</p>
+              <p>{inventory.length}</p>
+              <p>{inventory.texture}</p>
+              <p>{inventory.color}</p>
+              <p>{inventory.hair_type}</p>
+              <p>{inventory.region_type}</p>
+              <p>{inventory.factory}</p>
+              <p>{inventory.current_location}</p>
+              <p>{inventory.quantity}</p>
+              <p>{inventory.cost_of_batch}</p>
+              <p>{inventory.price_per_unit}</p>
+              <p>{inventory.photos}</p>
+              <p>{inventory.qr_code}</p>
               </td>
           </tr>
       </tbody>
