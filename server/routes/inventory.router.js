@@ -14,23 +14,25 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    
     console.log('req.body: ', req.body);
-    const batch = req.body.batch;
-    const name = req.body.name;
-    const product_line = req.body.product_line;
-    const length = req.body.length;
-    const texture = req.body.texture;
-    const color = req.body.color;
-    const hair_type = req.body.hair_type;
-    const region_type = req.body.region_type;
-    const factory = req.body.factory;
-    const current_location = req.body.current_location;
-    const quantity = req.body.quantity;
-    const cost_of_batch = req.body.cost_of_batch;
-    const price_per_unit = req.body.price_per_unit;
-    const photos = req.body.photos;
-    const qr_code = req.body.qr_code;
+
+    const { batch,
+            name,
+            product_line,
+            length,
+            texture,
+            color,
+            hair_type,
+            region_type,
+            factory,
+            current_location,
+            quantity,
+            cost_of_batch,
+            price_per_unit,
+            photos,
+            qr_code
+        } = req.body;
+
     const queryText = `INSERT INTO "inventory" (
                                                 batch,
                                                 name,
@@ -64,6 +66,7 @@ router.post('/', (req, res) => {
                             $14,
                             $15
                         ) RETURNING id;`;
+
     const queryValues = [
         batch,
         name,
@@ -81,6 +84,7 @@ router.post('/', (req, res) => {
         photos,
         qr_code
     ];
+
     console.log('queryValues: ', queryValues);
     pool.query(queryText, queryValues)
         .then((response) => {
@@ -92,23 +96,24 @@ router.post('/', (req, res) => {
         });
   });
 
-router.put('/:id', (req, res) => {
-    console.log('req.body: ', req.body);
-    const batch = req.body.batch;
-    const name = req.body.name;
-    const product_line = req.body.product_line;
-    const length = req.body.length;
-    const texture = req.body.texture;
-    const color = req.body.color;
-    const hair_type = req.body.hair_type;
-    const region_type = req.body.region_type;
-    const factory = req.body.factory;
-    const current_location = req.body.current_location;
-    const quantity = req.body.quantity;
-    const cost_of_batch = req.body.cost_of_batch;
-    const price_per_unit = req.body.price_per_unit;
-    const photos = req.body.photos;
-    const qr_code = req.body.qr_code;
+router.put('/', (req, res) => {
+    const { batch,
+        name,
+        product_line,
+        length,
+        texture,
+        color,
+        hair_type,
+        region_type,
+        factory,
+        current_location,
+        quantity,
+        cost_of_batch,
+        price_per_unit,
+        photos,
+        qr_code
+    } = req.body;
+    
     const queryText = `UPDATE inventory SET batch = $1,
                                             name = $2,
                                             product_line = $3,
@@ -156,9 +161,11 @@ router.put('/:id', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-    pool.query('DELETE FROM "inventory" WHERE id=$1', [req.params.id]).then((result) => {
+    pool.query('DELETE FROM "inventory" WHERE id=$1', [req.params.id])
+    .then((result) => {
         res.sendStatus(200);
-    }).catch((error) => {
+    })
+    .catch((error) => {
         console.log('Error DELETE /api/inventory', error);
         res.sendStatus(500);
     })

@@ -27,8 +27,8 @@ app.use(passport.session());
 
 /* Routes */
 app.use('/api/user', userRouter);
-app.use('/api/secrets', secretsRouter);
-app.use('/api/allusers', allusersRouter);
+app.use('/api/secrets', secretsRouter);  // Might not need?
+app.use('/api/allusers', allusersRouter); // Might not need?
 app.use('/api/inventory', inventoryRouter);
 
 // Serve static files

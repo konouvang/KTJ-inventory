@@ -5,7 +5,7 @@ import { put, takeLatest } from 'redux-saga/effects';
 function* updateInventory(action) {
     try {
         console.log('postInventory - action.payload: ', action.payload);
-        yield axios.post('/api/inventory', action.payload);
+        yield axios.put('/api/inventory', action.payload);
         yield put({
             type: 'GET_INVENTORY',
         });

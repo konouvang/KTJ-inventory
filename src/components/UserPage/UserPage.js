@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStateToProps from '../../modules/mapStateToProps';
 // import LogOutButton from '../LogOutButton/LogOutButton';
+import Grid from '@material-ui/core/Grid';
 
 
 
@@ -12,13 +13,12 @@ class UserPage extends Component {
     });
 }
 
-    render() {
-        console.log(this.props.reduxState.inventoryReducer);
-        const inventoryHTML = this.props.reduxState.inventoryReducer.map((inventory, index) => {
-          return (
-      <tbody>
-          <tr>
-              <td scope="row">
+render() {
+    console.log(this.props.reduxState.inventoryReducer);
+    const inventoryHTML = this.props.reduxState.inventoryReducer.map((inventory, index) => {
+      return (
+       <Grid item xs={4} key={index}>
+              <img src={`images/${inventory.photos}`} alt={inventory.id}/>
               <p>{inventory.id}</p>
               <p>{inventory.batch}</p>
               <p>{inventory.name}</p>
@@ -33,29 +33,20 @@ class UserPage extends Component {
               <p>{inventory.quantity}</p>
               <p>{inventory.cost_of_batch}</p>
               <p>{inventory.price_per_unit}</p>
-              <p>{inventory.photos}</p>
               <p>{inventory.qr_code}</p>
-              </td>
-          </tr>
-      </tbody>
-  
-      )
-        })
-        return (
-            <div>
-                <table className="table">
-                    <thead>
-                        <tr>
-                            <th scope="col"></th>
-                        </tr>
-                    </thead>
-                    {inventoryHTML}
-                </table>
-            </div>
-        )
-    }
-}
+      </Grid>
 
+  )
+    })
+    return (
+      <div>
+      <Grid container spacing={1}>
+        {inventoryHTML}
+        </Grid>
+    </div>
+    )
+}
+}
 
 
 ////THIS WILL BE THE DASHBOARD!!!!!!!!!!

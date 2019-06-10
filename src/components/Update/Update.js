@@ -29,6 +29,7 @@ class Update extends Component {
 
     clickMe = (event) => {
         event.preventDefault();
+        console.log('REMEMBER, IT MIGHT BREAK HERE! : -------', this.state.inventoryEntry);
         this.props.dispatch({type: 'UPDATE_INVENTORY', payload : this.state.inventoryEntry});
 
     }
