@@ -56,7 +56,7 @@ img {
   }
 
   .dashboard {
-    font-size: 6px;
+    font-size: 10px;
     font-weight: 700;
     display: inline-block;
     color: black;
@@ -66,3 +66,4 @@ img {
 .borderdashboard {
     border: 1px solid black;
 }
+
