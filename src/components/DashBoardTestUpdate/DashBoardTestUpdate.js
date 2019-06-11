@@ -7,7 +7,7 @@ import Grid from '@material-ui/core/Grid';
 
 
 
-class UserPage extends Component {
+class DashBoardUpdate extends Component {
   componentDidMount() {
     this.props.dispatch({
         type: 'FETCH_INVENTORY',
@@ -88,5 +88,5 @@ render() {
 // const mapStateToProps = ({user}) => ({ user });
 
 // this allows us to use <App /> in index.js
-export default connect(mapStateToProps)(UserPage);
+export default connect(mapStateToProps)(DashBoardUpdate);
 

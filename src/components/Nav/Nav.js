@@ -37,6 +37,9 @@ class Nav extends Component {
           <Link className="nav-link" to="/masterdata">
             Master Data
           </Link>
+          <Link className="nav-link" to="/dashboardupdatetest">
+            Dashboard Update Test
+          </Link>
           <LogOutButton className="nav-link"/>
         </>
       )}

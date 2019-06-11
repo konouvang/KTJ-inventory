@@ -7,7 +7,7 @@ function* postInventory(action) {
         console.log('postInventory - action.payload: ', action.payload);
         yield axios.post('/api/inventory', action.payload);
         yield put({
-            type: 'GET_INVENTORY',
+            type: 'FETCH_INVENTORY',
         });
     } catch (error) {
         console.log('error HELP:', error);

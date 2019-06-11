@@ -19,6 +19,8 @@ import SecretsPage from '../SecretsPage/SecretsPage';
 import AllUsersPage from '../AllUsersPage/AllUsersPage';
 import MasterData from '../MasterData/MasterData';
 import Entry from '../Entry/Entry';
+import DashBoardTestUpdate from '../DashBoardTestUpdate/DashBoardTestUpdate';
+
 
 
 import './App.css';
@@ -77,6 +79,12 @@ class App extends Component {
               exact
               path="/masterdata"
               component={MasterData}
+            />
+
+            <ProtectedRoute
+              exact
+              path="/dashboardupdatetest"
+              component={DashBoardTestUpdate}
             />
             {/* If none of the other routes matched, we will show a 404. */}
             <Route render={() => <h1>404</h1>} />
