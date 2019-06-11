@@ -47,3 +47,22 @@ input {
     border-bottom:1px solid #444; 
     cursor: pointer;
 }
+
+img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+  }
+
+  .dashboard {
+    font-size: 6px;
+    font-weight: 700;
+    display: inline-block;
+    color: black;
+    padding-left: 10px;
+}
+
+.borderdashboard {
+    border: 1px solid black;
+}

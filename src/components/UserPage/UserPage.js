@@ -6,6 +6,7 @@ import Grid from '@material-ui/core/Grid';
 
 
 
+
 class UserPage extends Component {
   componentDidMount() {
     this.props.dispatch({
@@ -13,12 +14,18 @@ class UserPage extends Component {
     });
 }
 
+removeItem = () => {
+  this.props.dispatch({ type: 'DELETE_INVENTORY', payload: this.props.reduxState.inventoryReducer});
+} //KONOU NOTE: I'm missing something and I can't figure out what it is.
+
+
 render() {
     console.log(this.props.reduxState.inventoryReducer);
     const inventoryHTML = this.props.reduxState.inventoryReducer.map((inventory, index) => {
       return (
-       <Grid item xs={4} key={index}>
+       <Grid item xs={4} key={index} className="borderdashboard">
               <img src={`images/${inventory.photos}`} alt={inventory.id}/>
+              <div className="dashboard">
               <p>{inventory.id}</p>
               <p>{inventory.batch}</p>
               <p>{inventory.name}</p>
@@ -34,16 +41,21 @@ render() {
               <p>{inventory.cost_of_batch}</p>
               <p>{inventory.price_per_unit}</p>
               <p>{inventory.qr_code}</p>
+              <button onClick={this.removeItem}>Remove</button>
+              </div>
       </Grid>
 
   )
     })
     return (
+
       <div>
       <Grid container spacing={1}>
         {inventoryHTML}
         </Grid>
     </div>
+
+   
     )
 }
 }
