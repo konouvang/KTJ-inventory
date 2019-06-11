@@ -48,9 +48,9 @@ editInventory = () => {
   });
 }
 
-updateItem = (item) => () => {
-  this.props.dispatch({type: 'UPDATE_INVENTORY', payload: item});
-}
+// updateItem = (item) => () => {
+//   this.props.dispatch({type: 'UPDATE_INVENTORY', payload: item});
+// }
 
 saveUpdate = (event) => {
   event.preventDefault();
@@ -71,7 +71,7 @@ changeHandle = (event) => {
     }
 
 render() {
-    console.log(this.props.reduxState.inventoryReducer);
+
     const inventoryHTML = this.props.reduxState.inventoryReducer.map((inventory, index) => {
       return (
        <Grid item xs={4} key={index} >
@@ -93,7 +93,8 @@ render() {
                 <input placeholder="quantity" value={inventory.quantity} name="quantity"onChange={this.changeHandle}/>
                 <input placeholder="cost_of_batch" value={inventory.cost_of_batch} name="cost_of_batch"onChange={this.changeHandle}/>
                 <input placeholder="price_per_unit" value={inventory.price_per_unit} name="price_per_unit"onChange={this.changeHandle}/>
-                <input placeholder="qr_code" value={inventory.qr_code} name="qr_code"onChange={this.changeHandle}/></>
+                <input placeholder="qr_code" value={inventory.qr_code} name="qr_code"onChange={this.changeHandle}/>
+                </>
                 :
                 <>
                 <p>{inventory.id}</p>
@@ -120,7 +121,6 @@ render() {
                   <form onSubmit={this.saveUpdate} key={index}>
                     <button type="submit">Save</button>
                   </form>
-                  <button onClick={this.updateItem(inventory.id)}>Update</button> 
                 </div> :
                 <button onClick={this.editInventory}>Edit Inventory</button>
               }
