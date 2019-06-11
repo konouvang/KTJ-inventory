@@ -1,6 +1,6 @@
 const updateReducer = (state = {}, action) => {
     switch (action.type) {
-      case 'SET_INVENTORY':
+      case 'UPDATE_INVENTORY':
         return action.payload;
       case 'UNSET_INVENTORY':
         return [];
