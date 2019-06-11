@@ -14,8 +14,9 @@ class UserPage extends Component {
     });
 }
 
-removeItem = () => {
-  this.props.dispatch({ type: 'DELETE_INVENTORY', payload: this.props.reduxState.inventoryReducer});
+removeItem = (item) => () => {
+  console.log('HERE: ', item);
+  this.props.dispatch({ type: 'DELETE_INVENTORY', payload: item});
 } //KONOU NOTE: I'm missing something and I can't figure out what it is.
 
 
@@ -41,7 +42,7 @@ render() {
               <p>{inventory.cost_of_batch}</p>
               <p>{inventory.price_per_unit}</p>
               <p>{inventory.qr_code}</p>
-              <button onClick={this.removeItem}>Remove</button>
+              <button onClick={this.removeItem(inventory.id)}>Remove</button>
               </div>
       </Grid>
 
