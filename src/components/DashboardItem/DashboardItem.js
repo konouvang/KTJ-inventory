@@ -9,6 +9,7 @@ class DashboardItem extends Component {
     constructor(props){
         super(props)
             this.state= {
+                inventoryId: this.props.inventoryId,
                 batch: this.props.batch,
                 name: this.props.name,
                 product_line: this.props.product_line,
@@ -28,26 +29,39 @@ class DashboardItem extends Component {
         }
     }
 
-    selectInventory = (event) => {
-        const payloadObject = {
-            batch: this.state.batch,
-            name: this.state.name,
-            product_line: this.state.product_line,
-            length: this.state.length,
-            texture: this.state.texture,
-            color: this.state.color,
-            hair_type: this.state.hair_type,
-            region_type: this.state.region_type,
-            factory: this.state.factory,
-            current_location: this.state.current_location,
-            quantity: this.state.quantity,
-            cost_of_batch: this.state.cost_of_batch,
-            price_per_unit: this.state.price_per_unit,
-            photos: this.state.photos,
-            qr_code: this.state.qr_code
-        }
+    // selectInventory = (event) => {
+    //     const payloadObject = {
+    //         inventoryId: this.state.inventoryId,
+    //         batch: this.state.batch,
+    //         name: this.state.name,
+    //         product_line: this.state.product_line,
+    //         length: this.state.length,
+    //         texture: this.state.texture,
+    //         color: this.state.color,
+    //         hair_type: this.state.hair_type,
+    //         region_type: this.state.region_type,
+    //         factory: this.state.factory,
+    //         current_location: this.state.current_location,
+    //         quantity: this.state.quantity,
+    //         cost_of_batch: this.state.cost_of_batch,
+    //         price_per_unit: this.state.price_per_unit,
+    //         photos: this.state.photos,
+    //         qr_code: this.state.qr_code
+    //     }
 
-        this.props.dispatch({type: 'UPDATE_INVENTORY', payload: payloadObject});
+    //     this.props.dispatch({type: 'UPDATE_INVENTORY', payload: payloadObject}); //KV: note sure about this, ask Instructors
+
+    // }
+
+    editInventory = () => {
+        this.setState({
+          inventoryIsEditable: true,
+        });
+      }
+
+    removeItem = (item) => () => {
+        console.log('HERE: ', item);
+        this.props.dispatch({ type: 'DELETE_INVENTORY', payload: item});
     }
     render(){
         return(

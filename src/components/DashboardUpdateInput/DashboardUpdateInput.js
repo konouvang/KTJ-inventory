@@ -6,6 +6,7 @@ import mapStateToProps from './mapStateToProps';
 class DashboardUpdateInput extends Component {
   state= {
       inventoryEntry: {
+          inventoryId: 0,
           batch: '',
           name: '',
           product_line: '',
@@ -28,7 +29,7 @@ class DashboardUpdateInput extends Component {
     this.setState({
       inventoryEntry: {
         ...this.state.inventoryEntry,
-        inventoryId: this.props.batch,
+        inventoryId: this.props.inventoryId,
         batch: this.props.batch,
         name: this.props.name,
         product_line: this.props.product_line,
