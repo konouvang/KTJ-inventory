@@ -19,7 +19,7 @@ import SecretsPage from '../SecretsPage/SecretsPage';
 import AllUsersPage from '../AllUsersPage/AllUsersPage';
 import MasterData from '../MasterData/MasterData';
 import Entry from '../Entry/Entry';
-import DashBoardTestUpdate from '../DashBoardTestUpdate/DashBoardTestUpdate';
+import DashboardHomePage from '../DashboardHomePage/DashboardHomePage';
 
 
 
@@ -53,7 +53,7 @@ class App extends Component {
             <ProtectedRoute
               exact
               path="/home"
-              component={UserPage}
+              component={DashboardHomePage}
             />
             {/* This works the same as the other protected route, except that if the user is logged in,
             they will see the secrets page instead. */}
@@ -79,12 +79,6 @@ class App extends Component {
               exact
               path="/masterdata"
               component={MasterData}
-            />
-
-            <ProtectedRoute
-              exact
-              path="/dashboardupdatetest"
-              component={DashBoardTestUpdate}
             />
             {/* If none of the other routes matched, we will show a 404. */}
             <Route render={() => <h1>404</h1>} />

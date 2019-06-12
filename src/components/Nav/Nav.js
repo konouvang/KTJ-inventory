@@ -20,7 +20,7 @@ class Nav extends Component {
         {/* Show this link if they are logged in or not,
         but call this link 'Home' if they are logged in,
         and call this link 'Login / Register' if they are not */}
-        {this.props.user.id ? 'Dash Board' : 'Login / Register'}
+        {this.props.user.id ? 'Dashboard' : 'Login / Register'}
       </Link>
       {/* Show the link to the info page and the logout button if the user is logged in */}
       {this.props.user.id && (
@@ -36,9 +36,6 @@ class Nav extends Component {
           </Link>
           <Link className="nav-link" to="/masterdata">
             Master Data
-          </Link>
-          <Link className="nav-link" to="/dashboardupdatetest">
-            Dashboard Update Test
           </Link>
           <LogOutButton className="nav-link"/>
         </>
