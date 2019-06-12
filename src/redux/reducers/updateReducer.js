@@ -1,10 +1,7 @@
 const updateReducer = (state = {}, action) => {
     switch (action.type) {
       case 'UPDATE_INVENTORY':
-          return [...state, { //name: action.payload.name, 
-                              //price: action.payload.price 
-
-                              batch: action.payload.batch,
+          return [...state, { batch: action.payload.batch,
                               name: action.payload.name,
                               product_line: action.payload.product_line,
                               length: action.payload.length,
@@ -28,4 +25,3 @@ const updateReducer = (state = {}, action) => {
   };
 
 export default updateReducer;
-  

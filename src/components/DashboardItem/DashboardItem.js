@@ -49,7 +49,7 @@ class DashboardItem extends Component {
     }
     render(){
         return(
-            <div key={index}>
+            <div>
                 <img src={`images/${inventory.photos}`} alt={inventory.id}/>
                 <p>{this.props.batch}</p>
                 <p>{this.props.name}</p>

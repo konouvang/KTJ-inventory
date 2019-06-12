@@ -1,29 +1,36 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import PizzaCell from '../PizzaCell/pizzacell'
+import DashboardItem from '../DashboardItem/DashboardItem'
 import mapStateToProps from './mapStateToProps';
 
 class DashboardList extends Component {
-  goToCart = (event) => {
-    this.props.history.push('/cart')
-  }
 
 
   render() {
-    const pizzaHTML = this.props.reduxState.pizzaReducer.map((pizza, index) => {
+    const inventoryHTML = this.props.reduxState.inventoryReducer.map((inventory, index) => {
       return (
-        <PizzaCell key={index}
-          img={pizza.image_path}
-          name={pizza.name}
-          description={pizza.description}
-          price={pizza.price}
+        <DashboardItem key={index}
+            batch={inventory.batch}
+            name={inventory.name}
+            product_line={inventory.product_line}
+            length={inventory.length}
+            texture={inventory.texture}
+            color={inventory.color}
+            hair_type={inventory.hair_type}
+            region_type={inventory.region_type}
+            factory={inventory.factory}
+            current_location={inventory.current_location}
+            quantity={inventory.quantity}
+            cost_of_batch={inventory.cost_of_batch}
+            price_per_unit={inventory.price_per_unit}
+            photos={inventory.photos}
+            qr_code={inventory.qr_code}
           />
       )
     })
     return (
       <div>
-        {pizzaHTML}
-        <button onClick={this.goToCart}>Cart</button>
+        {inventoryHTML}
       </div>
     )
   }
