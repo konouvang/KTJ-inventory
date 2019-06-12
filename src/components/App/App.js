@@ -14,9 +14,6 @@ import Footer from '../Footer/Footer';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 
 import AboutPage from '../AboutPage/AboutPage';
-import UserPage from '../UserPage/UserPage';
-import SecretsPage from '../SecretsPage/SecretsPage';
-import AllUsersPage from '../AllUsersPage/AllUsersPage';
 import MasterData from '../MasterData/MasterData';
 import EntryPage from '../EntryPage/EntryPage';
 import DashboardHomePage from '../DashboardHomePage/DashboardHomePage';
