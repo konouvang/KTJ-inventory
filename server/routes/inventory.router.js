@@ -96,7 +96,7 @@ router.post('/', (req, res) => {
         });
   });
 
-router.put('/', (req, res) => {
+router.put('/:id', (req, res) => {
     const { batch,
         name,
         product_line,

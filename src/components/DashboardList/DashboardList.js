@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import DashboardItem from '../DashboardItem/DashboardItem'
-import mapStateToProps from './mapStateToProps';
+import mapStateToProps from '../../modules/mapStateToProps';
 import Grid from '@material-ui/core/Grid';
 
 class DashboardList extends Component {

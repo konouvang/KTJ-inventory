@@ -3,8 +3,9 @@ import { put, takeLatest } from 'redux-saga/effects';
 
 
 function* updateInventory(action) {
+    console.log(action);
     try {
-        const response = yield axios.put('/api/inventory', action.payload);
+        const response = yield axios.put('/api/inventory/' + action.payload.inventoryId, action.payload);
         yield put({type: 'FETCH_INVENTORY', payload: response.data});
     } catch (error) {
         console.log('error HELP:', error);

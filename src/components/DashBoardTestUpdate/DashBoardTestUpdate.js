@@ -53,10 +53,10 @@ editInventory = () => {
 //   this.props.dispatch({type: 'UPDATE_INVENTORY', payload: item});
 // }
 
-saveUpdate = (event) => {
-  event.preventDefault();
-  console.log('Show me things!: ', this.state.inventoryUpdate);
-}
+// saveUpdate = (event) => {
+//   event.preventDefault();
+//   console.log('Show me things!: ', this.state.inventoryUpdate);
+// }
 
 changeHandle = (event) => {
   const inputValue = event.target.value;

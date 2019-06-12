@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import mapStateToProps from './mapStateToProps';
+import mapStateToProps from '../../modules/mapStateToProps';
 
 
 class DashboardUpdateInput extends Component {
@@ -71,7 +71,7 @@ class DashboardUpdateInput extends Component {
 
   saveUpdate = (event) => {
     event.preventDefault();
-    console.log('Show me things!: ', this.state.inventoryUpdate);
+    console.log('Show me things!: ', this.state.inventoryEntry);
     this.props.dispatch({type: 'UPDATE_INVENTORY', payload : this.state.inventoryEntry});
   }
 

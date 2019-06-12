@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import mapStateToProps from './mapStateToProps';
+import mapStateToProps from '../../modules/mapStateToProps';
 import Grid from '@material-ui/core/Grid';
 import DashboardUpdateInput from '../DashboardUpdateInput/DashboardUpdateInput';
 
