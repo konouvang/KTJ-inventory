@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import DashboardItem from '../DashboardItem/DashboardItem'
 import mapStateToProps from './mapStateToProps';
+import Grid from '@material-ui/core/Grid';
 
 class DashboardList extends Component {
 
@@ -10,6 +11,7 @@ class DashboardList extends Component {
     const inventoryHTML = this.props.reduxState.inventoryReducer.map((inventory, index) => {
       return (
         <DashboardItem key={index}
+            inventoryId={inventory.id}
             batch={inventory.batch}
             name={inventory.name}
             product_line={inventory.product_line}
@@ -29,9 +31,9 @@ class DashboardList extends Component {
       )
     })
     return (
-      <div>
+      <Grid container spacing={1}>
         {inventoryHTML}
-      </div>
+      </Grid>
     )
   }
 }

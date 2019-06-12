@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStateToProps from './mapStateToProps';
+import Grid from '@material-ui/core/Grid';
+import DashboardUpdateInput from '../DashboardUpdateInput/DashboardUpdateInput';
 
 
 class DashboardItem extends Component {
@@ -49,25 +51,41 @@ class DashboardItem extends Component {
     }
     render(){
         return(
-            <div>
-                <img src={`images/${inventory.photos}`} alt={inventory.id}/>
-                <p>{this.props.batch}</p>
-                <p>{this.props.name}</p>
-                <p>{this.props.product_line}</p>
-                <p>{this.props.length}</p>
-                <p>{this.props.texture}</p>
-                <p>{this.props.color}</p>
-                <p>{this.props.hair_type}</p>
-                <p>{this.props.region_type}</p>
-                <p>{this.props.factory}</p>
-                <p>{this.props.current_location}</p>
-                <p>{this.props.quantity}</p>
-                <p>{this.props.cost_of_batch}</p>
-                <p>{this.props.price_per_unit}</p>
-                <p>{this.props.photos}</p>
-                <p>{this.props.qr_code}</p>
-                <button onClick={this.selectInventory}>Add Inventory to updateReducer</button>
-            </div>
+            <Grid item xs={4}>
+                <div>
+                    <img src={`images/${this.props.photos}`} alt={this.props.inventoryId}/>
+                    {this.state.inventoryIsEditable ?
+                    <DashboardUpdateInput
+                        batch={this.props.batch}
+                    />
+                    :
+                    <div>
+                        <p>{this.props.batch}</p>
+                        <p>{this.props.name}</p>
+                        <p>{this.props.product_line}</p>
+                        <p>{this.props.length}</p>
+                        <p>{this.props.texture}</p>
+                        <p>{this.props.color}</p>
+                        <p>{this.props.hair_type}</p>
+                        <p>{this.props.region_type}</p>
+                        <p>{this.props.factory}</p>
+                        <p>{this.props.current_location}</p>
+                        <p>{this.props.quantity}</p>
+                        <p>{this.props.cost_of_batch}</p>
+                        <p>{this.props.price_per_unit}</p>
+                        <p>{this.props.photos}</p>
+                        <p>{this.props.qr_code}</p>
+                    </div>
+                    }
+
+                    <div>
+
+                        <button onClick={this.removeItem(this.props.inventoryId)}>Remove</button>
+                        {/* <button onClick={this.selectInventory}>Add Inventory to updateReducer</button> */}
+                        <button disabled={this.state.inventoryIsEditable} onClick={this.editInventory}>Edit Inventory</button>
+                    </div>
+                </div>
+            </Grid>
         )
     }
 }
