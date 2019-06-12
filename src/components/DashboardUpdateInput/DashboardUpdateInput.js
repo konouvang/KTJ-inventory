@@ -28,7 +28,22 @@ class DashboardUpdateInput extends Component {
     this.setState({
       inventoryEntry: {
         ...this.state.inventoryEntry,
+        inventoryId: this.props.batch,
         batch: this.props.batch,
+        name: this.props.name,
+        product_line: this.props.product_line,
+        length: this.props.length,
+        texture: this.props.texture,
+        color: this.props.color,
+        hair_type: this.props.hair_type,
+        region_type: this.props.region_type,
+        factory: this.props.factory,
+        current_location: this.props.current_location,
+        quantity: this.props.quantity,
+        cost_of_batch: this.props.cost_of_batch,
+        price_per_unit: this.props.price_per_unit,
+        photos: this.props.photos,
+        qr_code: this.props.qr_code,
       }
     })
   }
@@ -39,7 +54,7 @@ class DashboardUpdateInput extends Component {
 
   }
 
- 
+
   changeHandle = (event) => {
     const inputValue = event.target.value;
         const propertyKey = event.target.getAttribute('name');

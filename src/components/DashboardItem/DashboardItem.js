@@ -56,10 +56,26 @@ class DashboardItem extends Component {
                     <img src={`images/${this.props.photos}`} alt={this.props.inventoryId}/>
                     {this.state.inventoryIsEditable ?
                     <DashboardUpdateInput
+                        inventoryId={this.props.inventoryId}
                         batch={this.props.batch}
+                        name={this.props.name}
+                        product_line={this.props.product_line}
+                        length={this.props.length}
+                        texture={this.props.texture}
+                        color={this.props.color}
+                        hair_type={this.props.hair_type}
+                        region_type={this.props.region_type}
+                        factory={this.props.factory}
+                        current_location={this.props.current_location}
+                        quantity={this.props.quantity}
+                        cost_of_batch={this.props.cost_of_batch}
+                        price_per_unit={this.props.price_per_unit}
+                        photos={this.props.photos}
+                        qr_code={this.props.qr_code}
                     />
                     :
                     <div>
+                        <p>{this.props.inventoryId}</p>
                         <p>{this.props.batch}</p>
                         <p>{this.props.name}</p>
                         <p>{this.props.product_line}</p>
