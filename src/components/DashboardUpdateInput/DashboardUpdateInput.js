@@ -48,11 +48,11 @@ class DashboardUpdateInput extends Component {
     })
   }
 
-  clickMe = (event) => {
-      event.preventDefault();
-      this.props.dispatch({type: 'POST_INVENTORY', payload : this.state.inventoryEntry});
+  // clickMe = (event) => {
+  //     event.preventDefault();
+  //     this.props.dispatch({type: 'UPDATE_INVENTORY', payload : this.state.inventoryEntry});
 
-  }
+  // }
 
 
   changeHandle = (event) => {
@@ -68,31 +68,37 @@ class DashboardUpdateInput extends Component {
         });
   }
 
-  clearInputs =(event) => {
-    this.setState({
-        inventoryEntry: {
-            batch: '',
-            name: '',
-            product_line: '',
-            length: '',
-            texture: '',
-            color: '',
-            hair_type: '',
-            region_type: '',
-            factory: '',
-            current_location: '',
-            quantity: '',
-            cost_of_batch: '',
-            price_per_unit: '',
-            photos: '',
-            qr_code: '',
-        }
-    })
+  saveUpdate = (event) => {
+    event.preventDefault();
+    console.log('Show me things!: ', this.state.inventoryUpdate);
+    this.props.dispatch({type: 'UPDATE_INVENTORY', payload : this.state.inventoryEntry});
   }
+
+  // clearInputs =(event) => {
+  //   this.setState({
+  //       inventoryEntry: {
+  //           batch: '',
+  //           name: '',
+  //           product_line: '',
+  //           length: '',
+  //           texture: '',
+  //           color: '',
+  //           hair_type: '',
+  //           region_type: '',
+  //           factory: '',
+  //           current_location: '',
+  //           quantity: '',
+  //           cost_of_batch: '',
+  //           price_per_unit: '',
+  //           photos: '',
+  //           qr_code: '',
+  //       }
+  //   })
+  // }
 
   render() {
     return (
-        <form onSubmit={this.clickMe}>
+        <form onSubmit={this.saveUpdate}>
                 <input placeholder="batch" value={this.state.enteredbatch} name="batch"onChange={this.changeHandle}/>
                 <input placeholder="name" value={this.state.enteredname} name="name"onChange={this.changeHandle}/>
                 <input placeholder="product_line" value={this.state.enteredproduct_line} name="product_line"onChange={this.changeHandle}/>
@@ -108,7 +114,7 @@ class DashboardUpdateInput extends Component {
                 <input placeholder="price_per_unit" value={this.state.enteredprice_per_unit} name="price_per_unit"onChange={this.changeHandle}/>
                 <input placeholder="photos" value={this.state.enteredphotos} name="photos"onChange={this.changeHandle}/>
                 <input placeholder="qr_code" value={this.state.enteredqr_code} name="qr_code"onChange={this.changeHandle}/>
-                <button>Submit</button>
+                <button>Save update</button>
         </form>
     );
   }
