@@ -25,14 +25,8 @@ class Nav extends Component {
       {/* Show the link to the info page and the logout button if the user is logged in */}
       {this.props.user.id && (
         <>
-          <Link className="nav-link" to="/secrets">
-            Secrets Page
-          </Link>
           <Link className="nav-link" to="/entry">
-            Entry Page
-          </Link>
-          <Link className="nav-link" to="/allusers">
-            All User
+            Entry
           </Link>
           <Link className="nav-link" to="/masterdata">
             Master Data

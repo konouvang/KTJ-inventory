@@ -4,7 +4,7 @@ import mapStateToProps from '../../modules/mapStateToProps';
 
 
 
-class Entry extends Component {
+class EntryPage extends Component {
  
 
     state = {
@@ -92,4 +92,4 @@ class Entry extends Component {
   }
 }
 
-export default connect(mapStateToProps)(Entry);
+export default connect(mapStateToProps)(EntryPage);
