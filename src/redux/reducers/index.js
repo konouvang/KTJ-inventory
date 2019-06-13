@@ -3,7 +3,6 @@ import errors from './errorsReducer';
 import loginMode from './loginModeReducer';
 import user from './userReducer';
 import secrets from './secretsReducer';
-import alluserReducer from './alluserReducer';
 import inventoryReducer from './inventoryReducer';
 import entryReducer from './entryReducer';
 import updateReducer from './updateReducer';
@@ -19,7 +18,6 @@ const rootReducer = combineReducers({
   loginMode, // will have a value of 'login' or 'registration' to control which screen is shown
   user, // will have an id and username if someone is logged in
   secrets,
-  alluserReducer,
   inventoryReducer,
   entryReducer,
   updateReducer,

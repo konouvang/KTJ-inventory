@@ -3,7 +3,6 @@ import loginSaga from './loginSaga';
 import registrationSaga from './registrationSaga';
 import userSaga from './userSaga';
 import secretsSaga from './secretsSaga';
-import alluserSaga from './alluserSaga';
 import inventorySaga from './inventorySaga';
 import entrySaga from './entrySaga';
 import updatesaga from './updateSaga';
@@ -22,7 +21,6 @@ export default function* rootSaga() {
     registrationSaga(),
     userSaga(),
     secretsSaga(),
-    alluserSaga(),
     inventorySaga(),
     entrySaga(),
     updatesaga(),
