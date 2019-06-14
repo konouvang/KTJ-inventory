@@ -11,7 +11,7 @@ class Nav extends Component {
       return (
         <div className="nav">
     <Link to="/home">
-    <img src="/images/user-icon.PNG" className="imgicon" /> 
+    <img src="/images/user-icon.jpg" className="imgicon" /> 
       
     </Link>
     <Link className ="nav-link">{this.props.user.username}</Link>
@@ -39,7 +39,7 @@ class Nav extends Component {
         About
       </Link>
       <Link to="/home">
-    <img src="/images/home-icon.PNG" className="imgicon" /> 
+    <img src="/images/home-icon.jpg" className="imgicon" /> 
     </Link>
     </div>
   </div>
