@@ -10,7 +10,8 @@ class DashboardList extends Component {
   render() {
     const inventoryHTML = this.props.reduxState.inventoryReducer.map((inventory, index) => {
       return (
-        <DashboardItem key={index}
+        <Grid item xs={4} key={index}>
+        <DashboardItem
             inventoryId={inventory.id}
             batch={inventory.batch}
             name={inventory.name}
@@ -28,12 +29,15 @@ class DashboardList extends Component {
             photos={inventory.photos}
             qr_code={inventory.qr_code}
           />
+          </Grid>
       )
     })
     return (
-      <Grid container spacing={2}>
-        {inventoryHTML}
-      </Grid>
+      <div className="container">
+        <Grid container spacing={3}>
+          {inventoryHTML}
+        </Grid>
+      </div>
     )
   }
 }

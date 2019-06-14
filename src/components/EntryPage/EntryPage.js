@@ -30,6 +30,7 @@ class EntryPage extends Component {
     clickMe = (event) => {
         event.preventDefault();
         this.props.dispatch({type: 'POST_INVENTORY', payload : this.state.inventoryEntry});
+        this.props.history.push('/home')
 
     }
  
