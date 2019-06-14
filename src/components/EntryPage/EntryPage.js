@@ -70,7 +70,7 @@ class EntryPage extends Component {
 
   render() {
     return (
-        <form onSubmit={this.clickMe}>
+        <form className="form" onSubmit={this.clickMe}>
                 <input placeholder="batch" value={this.state.enteredbatch} name="batch"onChange={this.changeHandle}/>
                 <input placeholder="name" value={this.state.enteredname} name="name"onChange={this.changeHandle}/>
                 <input placeholder="product_line" value={this.state.enteredproduct_line} name="product_line"onChange={this.changeHandle}/>

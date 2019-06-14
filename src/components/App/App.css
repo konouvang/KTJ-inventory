@@ -8,14 +8,14 @@ body {
     margin: 50px;
 }
 
-/* form {
+.form {
     background-color: #dbd5d5;
     width: 30%;
     height: 250px;
     margin: 20px auto;
     padding: 25px;
     border-radius: 2px;
-} */
+}
 
 input {
     margin: 5px;
@@ -68,3 +68,19 @@ img {
     border: 1px solid black;
 }
 
+p {
+    font-style: Bookman, URW Bookman L, serif;
+    font-size: 12px;
+}
+
+.column {
+    float: left;
+    width: 50%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }

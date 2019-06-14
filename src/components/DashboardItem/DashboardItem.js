@@ -42,7 +42,7 @@ class DashboardItem extends Component {
     }
     render(){
         return(
-            <Grid item xs={4}>
+            <Grid item xs={4}  className="borderdashboard">
                 <div>
                     <img src={`images/${this.props.photos}`} alt={this.props.inventoryId}/>
                     {this.state.inventoryIsEditable ?
@@ -65,23 +65,27 @@ class DashboardItem extends Component {
                         qr_code={this.props.qr_code}
                     />
                     :
-                    <div>
-                        <p>{this.props.inventoryId}</p>
-                        <p>{this.props.batch}</p>
-                        <p>{this.props.name}</p>
-                        <p>{this.props.product_line}</p>
-                        <p>{this.props.length}</p>
-                        <p>{this.props.texture}</p>
-                        <p>{this.props.color}</p>
-                        <p>{this.props.hair_type}</p>
-                        <p>{this.props.region_type}</p>
-                        <p>{this.props.factory}</p>
-                        <p>{this.props.current_location}</p>
-                        <p>{this.props.quantity}</p>
-                        <p>{this.props.cost_of_batch}</p>
-                        <p>{this.props.price_per_unit}</p>
-                        <p>{this.props.photos}</p>
-                        <p>{this.props.qr_code}</p>
+                    <div className="dashboardPTag" class="row">
+                        <div class="column">
+                            <p>Id: {this.props.inventoryId}</p>
+                            <p>Batch: {this.props.batch}</p>
+                            <p>Name: {this.props.name}</p>
+                            <p>Product Line: {this.props.product_line}</p>
+                            <p>Length: {this.props.length}</p>
+                            <p>Texture: {this.props.texture}</p>
+                            <p>Color: {this.props.color}</p>
+                            <p>Hair Type: {this.props.hair_type}</p>
+                        </div>
+                        <div class="column">
+                            <p>Region: {this.props.region_type}</p>
+                            <p>Factory: {this.props.factory}</p>
+                            <p>Location: {this.props.current_location}</p>
+                            <p>Quantity: {this.props.quantity}</p>
+                            <p>Cost of Batch: {this.props.cost_of_batch}</p>
+                            <p>Price per Unit: {this.props.price_per_unit}</p>
+                            <p>Image: {this.props.photos}</p>
+                            <p>QR Code: {this.props.qr_code}</p>
+                        </div>
                     </div>
                     }
 
