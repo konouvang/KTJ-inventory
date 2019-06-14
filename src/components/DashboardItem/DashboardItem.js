@@ -43,7 +43,7 @@ class DashboardItem extends Component {
     }
     render(){
         return(
-            <Grid item xs={4}  className="card">
+            <Grid item xs={4} className="card">
                     <img src={`images/${this.props.photos}`} alt={this.props.inventoryId}/>
                     <div className="container">
                         <div>
@@ -99,7 +99,6 @@ class DashboardItem extends Component {
                         </div>
                     </div>
                     </div>
-            
             </Grid>
         )
     }

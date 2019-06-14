@@ -31,7 +31,7 @@ class DashboardList extends Component {
       )
     })
     return (
-      <Grid container spacing={1}>
+      <Grid container spacing={2}>
         {inventoryHTML}
       </Grid>
     )
