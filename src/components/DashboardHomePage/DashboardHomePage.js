@@ -3,9 +3,6 @@ import { connect } from 'react-redux';
 import mapStateToProps from '../../modules/mapStateToProps';
 import DashboardList from '../DashboardList/DashboardList';
 
-
-
-
 class DashboardHomePage extends Component {
   state = {
     inventoryIsEditable: false,
@@ -62,9 +59,9 @@ changeHandle = (event) => {
 
 render() {
     return (
-      <div>
-        <DashboardList />
-      </div>
+        <div>
+          <DashboardList />
+        </div>
     )
 }
 }
