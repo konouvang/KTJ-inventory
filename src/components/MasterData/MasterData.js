@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStateToProps from '../../modules/mapStateToProps';
-
-// import LogOutButton from '../LogOutButton/LogOutButton';
 import './MasterData.css';
+import ReactHTMLTableToExcel from 'react-html-table-to-excel';
+
 
 
 class MasterData extends Component {
@@ -41,7 +41,14 @@ class MasterData extends Component {
         })
         return (
             <div>
-                <table className="table">
+                <ReactHTMLTableToExcel
+                    id="test-table-xls-button"
+                    className="download-table-xls-button"
+                    table="table-to-xls"
+                    filename="tablexls"
+                    sheet="tablexls"
+                    buttonText="Download as XLS"/>
+                <table className="table" id="table-to-xls">
                     <thead>
                         <tr>
                             <th scope="col">Batch</th>

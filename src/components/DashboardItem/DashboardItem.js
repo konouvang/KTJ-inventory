@@ -67,8 +67,13 @@ class DashboardItem extends Component {
                             qr_code={this.props.qr_code}
                         />
                         :
+<<<<<<< HEAD
                         <div className="dashboardPTag" className="row">
                             <div className="column">
+=======
+                        <div className="dashboardPTag" class="row">
+                            <div class="column">
+>>>>>>> 1b77c14a1276ac5b49991ca24f6a333a84afe5a7
                                 <p>Id: {this.props.inventoryId}</p>
                                 <p>Batch: {this.props.batch}</p>
                                 <p>Name: {this.props.name}</p>
@@ -78,7 +83,11 @@ class DashboardItem extends Component {
                                 <p>Color: {this.props.color}</p>
                                 <p>Hair Type: {this.props.hair_type}</p>
                             </div>
+<<<<<<< HEAD
                             <div className="column">
+=======
+                            <div class="column">
+>>>>>>> 1b77c14a1276ac5b49991ca24f6a333a84afe5a7
                                 <p>Region: {this.props.region_type}</p>
                                 <p>Factory: {this.props.factory}</p>
                                 <p>Location: {this.props.current_location}</p>
@@ -93,9 +102,15 @@ class DashboardItem extends Component {
 
                         <div>
 
+<<<<<<< HEAD
                             <button type="button" className="deletebtn" onClick={this.removeItem(this.props.inventoryId)}>Remove</button>
                             {/* <button onClick={this.selectInventory}>Add Inventory to updateReducer</button> */}
                             <button type="button" className="editbtn" disabled={this.state.inventoryIsEditable} onClick={this.editInventory}>Edit Inventory</button>
+=======
+                            <button type="button" class="deletebtn" onClick={this.removeItem(this.props.inventoryId)}>Remove</button>
+                            {/* <button onClick={this.selectInventory}>Add Inventory to updateReducer</button> */}
+                            <button type="button" class="editbtn" disabled={this.state.inventoryIsEditable} onClick={this.editInventory}>Edit Inventory</button>
+>>>>>>> 1b77c14a1276ac5b49991ca24f6a333a84afe5a7
                         </div>
                     </div>
                     </div>

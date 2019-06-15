@@ -31,6 +31,10 @@ class EntryPage extends Component {
         event.preventDefault();
         this.props.dispatch({type: 'POST_INVENTORY', payload : this.state.inventoryEntry});
         this.props.history.push('/home')
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1b77c14a1276ac5b49991ca24f6a333a84afe5a7
     }
  
   changeHandle = (event) => {
@@ -70,7 +74,7 @@ class EntryPage extends Component {
 
   render() {
     return (
-        <form onSubmit={this.clickMe}>
+        <form className="form" onSubmit={this.clickMe}>
                 <input placeholder="batch" value={this.state.enteredbatch} name="batch"onChange={this.changeHandle}/>
                 <input placeholder="name" value={this.state.enteredname} name="name"onChange={this.changeHandle}/>
                 <input placeholder="product_line" value={this.state.enteredproduct_line} name="product_line"onChange={this.changeHandle}/>

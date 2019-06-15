@@ -87,7 +87,11 @@ class DashboardUpdateInput extends Component {
                 <input placeholder="price_per_unit" value={this.state.enteredprice_per_unit} name="price_per_unit"onChange={this.changeHandle}/>
                 <input placeholder="photos" value={this.state.enteredphotos} name="photos"onChange={this.changeHandle}/>
                 <input placeholder="qr_code" value={this.state.enteredqr_code} name="qr_code"onChange={this.changeHandle}/>
+<<<<<<< HEAD
                 <button className="saveupdatebtn">Save update</button>
+=======
+                <button type="button" class="saveupdatebtn">Save update</button>
+>>>>>>> 1b77c14a1276ac5b49991ca24f6a333a84afe5a7
         </form>
     );
   }
