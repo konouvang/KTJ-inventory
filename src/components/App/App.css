@@ -44,7 +44,7 @@ input {
     padding:0;
     font: inherit;
     outline:0;
-    border-bottom:1px solid #444; 
+    border-bottom:1px solid #444;
     cursor: pointer;
 }
 
@@ -78,7 +78,7 @@ p {
     float: left;
     width: 50%;
   }
-  
+
   /* Clear floats after the columns */
   .row:after {
     content: "";
@@ -131,12 +131,12 @@ p {
     border: 2px solid white;
 
   }
-  
+
   /* On mouse-over, add a deeper shadow */
   .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   }
-  
+
   /* Add some padding inside the card container */
   .container {
     padding: 8px 16px;
