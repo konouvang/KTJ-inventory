@@ -30,7 +30,7 @@ class EntryPage extends Component {
     clickMe = (event) => {
         event.preventDefault();
         this.props.dispatch({type: 'POST_INVENTORY', payload : this.state.inventoryEntry});
-
+        this.props.history.push('/home')
     }
  
   changeHandle = (event) => {
@@ -86,7 +86,7 @@ class EntryPage extends Component {
                 <input placeholder="price_per_unit" value={this.state.enteredprice_per_unit} name="price_per_unit"onChange={this.changeHandle}/>
                 <input placeholder="photos" value={this.state.enteredphotos} name="photos"onChange={this.changeHandle}/>
                 <input placeholder="qr_code" value={this.state.enteredqr_code} name="qr_code"onChange={this.changeHandle}/>
-                <button>Submit</button>
+                <button className="saveupdatebtn">Submit</button>
         </form>
     );
   }
