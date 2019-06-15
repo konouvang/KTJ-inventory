@@ -48,7 +48,7 @@ class MasterData extends Component {
                     filename="tablexls"
                     sheet="tablexls"
                     buttonText="Download as XLS"/>
-                <table className="table">
+                <table className="table" id="table-to-xls">
                     <thead>
                         <tr>
                             <th scope="col">Batch</th>

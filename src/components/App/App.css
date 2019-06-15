@@ -112,6 +112,13 @@ p {
     color: white;
   }
 
+  .download-table-xls-button {
+    background-color: green;
+    font-size: 11px;
+    border-radius: 12px;
+    color: white;
+  }
+
   .card {
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
