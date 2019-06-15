@@ -113,10 +113,10 @@ p {
   }
 
   .download-table-xls-button {
-    background-color: green;
-    font-size: 11px;
-    border-radius: 12px;
-    color: white;
+    background-color: #ffec73;
+    font-size: 15px;
+    border-radius: 20px;
+    color: black;
   }
 
   .card {
