@@ -31,7 +31,6 @@ class EntryPage extends Component {
         event.preventDefault();
         this.props.dispatch({type: 'POST_INVENTORY', payload : this.state.inventoryEntry});
         this.props.history.push('/home')
-
     }
  
   changeHandle = (event) => {
