@@ -23,4 +23,4 @@ class ImageUpload extends Component {
 
 }
 
-export default connect(ImageUpload);
+export default connect()(ImageUpload);
