@@ -17,7 +17,7 @@ class ImageUpload extends Component {
                 s3Url={s3Url}
                 maxSize={1024 * 1024 * 5}
                 upload={uploadOptions}
-            /> s
+            />
           )
         }
 
