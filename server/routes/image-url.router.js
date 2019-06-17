@@ -14,8 +14,21 @@ router.get('/', (req, res) => {
  * Add an item for the logged in user to the shelf
  */
 router.post('/', (req, res) => {
-    console.log(req.body);
-    res.sendStatus(200);
+    console.log(req.body.imageUrl);
+    const imageUrl = req.body.imageUrl;
+
+    const queryText = `INSERT INTO "inventory" ("photos") VALUES ($1) WHERE "id"=$2;`;
+    const queryValues = [photos];
+
+    console.log('queryValues: ', queryValues);
+    pool.query(queryText, queryValues)
+        .then((response) => {
+            res.sendStatus(201)
+        })
+        .catch((err) => {
+            console.log('imageUrl err',err);
+            res.sendStatus(500)
+        });
 });
 
 

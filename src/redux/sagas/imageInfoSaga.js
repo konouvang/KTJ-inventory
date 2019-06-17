@@ -8,8 +8,12 @@ function* postImageUrl() {
       headers: { 'Content-Type': 'application/json' },
       withCredentials: true,
     };
-        console.log('POSTING IMAGE URL!');
-        const response = yield axios.post('api/imageurl', action.payload, config);
+
+        const data = {
+            imageUrl: action.payload
+        }
+
+        const response = yield axios.post('api/imageurl', data, config);
         console.log(response);
         // AFTER POST COMES BACK SUCCESSFUL, DO A GET!
   } catch (error) {

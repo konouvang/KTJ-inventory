@@ -15,7 +15,9 @@ class ImageUpload extends Component {
     render() {
 
         const uploadOptions = {
-            server: 'https://safe-falls-78333.herokuapp.com',
+            // server: 'https://safe-falls-78333.herokuapp.com',
+            server: 'https://localhost:5000',
+
             // signingUrlQueryParams: {uploadType: 'avatar'},
         }
           const s3Url = 'https://ktjinventory.s3.amazonaws.com';
