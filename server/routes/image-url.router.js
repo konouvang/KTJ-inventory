@@ -17,7 +17,7 @@ router.post('/', (req, res) => {
     console.log(req.body.imageUrl);
     const imageUrl = req.body.imageUrl;
 
-    const queryText = `INSERT INTO "inventory" ("photos") VALUES ($1) WHERE "id"=$2;`;
+    const queryText = `INSERT INTO "inventory" (photos) VALUES ($1) WHERE id=$2;`;
     const queryValues = [photos];
 
     console.log('queryValues: ', queryValues);
