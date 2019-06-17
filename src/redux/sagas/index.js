@@ -7,6 +7,7 @@ import inventorySaga from './inventorySaga';
 import entrySaga from './entrySaga';
 import updatesaga from './updateSaga';
 import deleteInventorySaga from './deleteSaga';
+import imageInfoSaga from './imageInfoSaga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -25,5 +26,6 @@ export default function* rootSaga() {
     entrySaga(),
     updatesaga(),
     deleteInventorySaga(),
+    imageInfoSaga(),
   ]);
 }
