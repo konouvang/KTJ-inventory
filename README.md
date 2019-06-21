@@ -3,7 +3,7 @@ KTJ is an inventory app for Melody 21 hair extensions. The application has 3 key
 
 ## SQL Table
 1. Create a database named `ktj`,
-2. Create the tables and insert the values from the tables.sql file,
+2. Create the tables and insert the values from the database.sql file,
 
 ## Prerequisites
 
