@@ -2,16 +2,16 @@ import axios from 'axios';
 import { put, takeLatest } from 'redux-saga/effects';
 
 // worker Saga: will be fired on "FETCH_USER" actions
-function* postImageUrl() {
+function* postImageUrl(action) {
   try {
     const config = {
       headers: { 'Content-Type': 'application/json' },
       withCredentials: true,
     };
 
-        // const data = {
-        //     imageUrl: action.payload
-        // }
+        const data = {
+            imageUrl: action.payload
+        }
 
         const response = yield axios.post('api/imageurl', data, config);
         console.log(response);

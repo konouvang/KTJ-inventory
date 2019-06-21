@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStateToProps from '../../modules/mapStateToProps';
+import ImageUpload from '../ImageUpload/ImageUpload'; 
+
 
 
 
@@ -29,7 +31,13 @@ class EntryPage extends Component {
 
     clickMe = (event) => {
         event.preventDefault();
-        this.props.dispatch({type: 'POST_INVENTORY', payload : this.state.inventoryEntry});
+        this.props.dispatch({
+          type: 'POST_INVENTORY',
+          payload : {
+            ...this.state.inventoryEntry,
+            // ADD IMAGE URL imageUrl: this.reduxState.WHATEVER_IMAGE
+          }
+        });
         this.props.history.push('/home')
     }
  
@@ -86,6 +94,7 @@ class EntryPage extends Component {
                 <input type="number" placeholder="price_per_unit" value={this.state.enteredprice_per_unit} name="price_per_unit"onChange={this.changeHandle}/>
                 <input type="text" placeholder="photos" value={this.state.enteredphotos} name="photos"onChange={this.changeHandle}/>
                 <input type="text" placeholder="qr_code" value={this.state.enteredqr_code} name="qr_code"onChange={this.changeHandle}/>
+                <ImageUpload />
                 <button className="saveupdatebtn">Submit</button>
         </form>
     );

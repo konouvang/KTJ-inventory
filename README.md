@@ -26,26 +26,12 @@ Before you get started, make sure you have the following software installed on y
 Create a new database called `inventory` and create a `user` table and `secret` table:
 
 ```SQL
-CREATE TABLE "user" (
-    "id" SERIAL PRIMARY KEY,
-    "username" VARCHAR (80) UNIQUE NOT NULL,
-    "password" VARCHAR (1000) NOT NULL,
-    "clearance_level" INTEGER NOT NULL DEFAULT 0
-);
-
-INSERT INTO "user" ("username", "password", "clearance_level")
-VALUES ('Admiral Greer', 'tuna', 18),
-('Captain Borodin', 'shark', 10),
-('Lieutenant Nguyen', 'fishy', 4),
-('Lieutenant Ryan', 'tuna', 4);
-
-
 CREATE TABLE inventory(
-   id               INTEGER  NOT NULL PRIMARY KEY 
+   id               SERIAL PRIMARY KEY
   ,Batch            VARCHAR(120) NOT NULL
   ,Name             VARCHAR(120) NOT NULL
   ,Product_Line     VARCHAR(120) NOT NULL
-  ,Length           VARCHAR(120) NOT NULL
+  ,Length           INTEGER  NOT NULL
   ,Texture          VARCHAR(120) NOT NULL
   ,Color            VARCHAR(120) NOT NULL
   ,Hair_Type        VARCHAR(120) NOT NULL
@@ -58,6 +44,30 @@ CREATE TABLE inventory(
   ,Photos           VARCHAR(120) NOT NULL
   ,QR_Code          VARCHAR(120) NOT NULL
 );
+
+INSERT INTO inventory(Batch,Name,Product_Line,Length,Texture,Color,Hair_Type,Region_Type,Factory,Current_Location,Quantity,Cost_of_Batch,Price_per_Unit,Photos,QR_Code) VALUES ('ABCD112','vestibulum','Bundles',8,'Silky straight','Black','Human Hair','Brazilian','TedHair Factory','Kansas City, KS',2,2,2,'2.jpg','ABC-abc-1234');
+INSERT INTO inventory(Batch,Name,Product_Line,Length,Texture,Color,Hair_Type,Region_Type,Factory,Current_Location,Quantity,Cost_of_Batch,Price_per_Unit,Photos,QR_Code) VALUES ('ABCD113','mattis','Clip ons',10,'Yaki','Brown Blonde','Synthetic','Peruvian','Kabeilu Hair Factory','Atlanta, GA',3,3,3,'3.jpg','ABC-abc-1235');
+INSERT INTO inventory(Batch,Name,Product_Line,Length,Texture,Color,Hair_Type,Region_Type,Factory,Current_Location,Quantity,Cost_of_Batch,Price_per_Unit,Photos,QR_Code) VALUES ('ABCD114','ullamcorper','Wigs',12,'Coarse straight','Red','Blend','Malaysian','XBL Hair Factory','Birmingham, Alabama',4,4,4,'4.jpg','ABC-abc-1236');
+INSERT INTO inventory(Batch,Name,Product_Line,Length,Texture,Color,Hair_Type,Region_Type,Factory,Current_Location,Quantity,Cost_of_Batch,Price_per_Unit,Photos,QR_Code) VALUES ('ABCD115','velit','Bundles',14,'Deep wave','Teal','Human Hair','Burmese','Xuchang Fuxin Hair Products Co., Ltd','Shanghai, China',5,5,5,'5.jpg','ABC-abc-1237');
+INSERT INTO inventory(Batch,Name,Product_Line,Length,Texture,Color,Hair_Type,Region_Type,Factory,Current_Location,Quantity,Cost_of_Batch,Price_per_Unit,Photos,QR_Code) VALUES ('ABCD116','sed','Clip ons',16,'Curly wave','Blue','Synthetic','Indian','Xuchang Longshengyuan Hair Products Co., Ltd','Kansas City, KS',6,6,6,'6.jpg','ABC-abc-1238');
+INSERT INTO inventory(Batch,Name,Product_Line,Length,Texture,Color,Hair_Type,Region_Type,Factory,Current_Location,Quantity,Cost_of_Batch,Price_per_Unit,Photos,QR_Code) VALUES ('ABCD117','ullamcorper','Wigs',18,'Romance wave','Lavender','Blend','Mink','Tianjin Yao Poly Import and Export Limited Company','Atlanta, GA',7,7,7,'7.jpg','ABC-abc-1239');
+INSERT INTO inventory(Batch,Name,Product_Line,Length,Texture,Color,Hair_Type,Region_Type,Factory,Current_Location,Quantity,Cost_of_Batch,Price_per_Unit,Photos,QR_Code) VALUES ('ABCD118','morbi','Bundles',20,'Kinky curly','Pink','Human Hair','Brazilian','Shaoyang Hongtai Arts &Crafts Co., Ltd','Birmingham, Alabama',8,8,8,'1.jpg','ABC-abc-1240');
+INSERT INTO inventory(Batch,Name,Product_Line,Length,Texture,Color,Hair_Type,Region_Type,Factory,Current_Location,Quantity,Cost_of_Batch,Price_per_Unit,Photos,QR_Code) VALUES ('ABCD119','tincidunt','Clip ons',22,'Wet and wavy','Green','Synthetic','Peruvian','Guangzhou Alimina Hair Products Co., Ltd','Shanghai, China',9,9,9,'2.jpg','ABC-abc-1241');
+INSERT INTO inventory(Batch,Name,Product_Line,Length,Texture,Color,Hair_Type,Region_Type,Factory,Current_Location,Quantity,Cost_of_Batch,Price_per_Unit,Photos,QR_Code) VALUES ('ABCD120','ornare','Wigs',24,'Silky straight','Ivory','Blend','Malaysian','TedHair Factory','Kansas City, KS',10,10,10,'3.jpg','ABC-abc-1242');
+INSERT INTO inventory(Batch,Name,Product_Line,Length,Texture,Color,Hair_Type,Region_Type,Factory,Current_Location,Quantity,Cost_of_Batch,Price_per_Unit,Photos,QR_Code) VALUES ('ABCD121','massa','Bundles',26,'Yaki','Grey','Human Hair','Burmese','Kabeilu Hair Factory','Atlanta, GA',11,11,11,'4.jpg','ABC-abc-1243');
+INSERT INTO inventory(Batch,Name,Product_Line,Length,Texture,Color,Hair_Type,Region_Type,Factory,Current_Location,Quantity,Cost_of_Batch,Price_per_Unit,Photos,QR_Code) VALUES ('ABCD122','eget','Clip ons',28,'Coarse straight','Fuschsia','Synthetic','Indian','XBL Hair Factory','Birmingham, Alabama',12,12,12,'5.jpg','ABC-abc-1244');
+INSERT INTO inventory(Batch,Name,Product_Line,Length,Texture,Color,Hair_Type,Region_Type,Factory,Current_Location,Quantity,Cost_of_Batch,Price_per_Unit,Photos,QR_Code) VALUES ('ABCD123','egestas','Wigs',30,'Deep wave','Coral','Blend','Mink','Xuchang Fuxin Hair Products Co., Ltd','Shanghai, China',13,13,13,'6.jpg','ABC-abc-1245');
+INSERT INTO inventory(Batch,Name,Product_Line,Length,Texture,Color,Hair_Type,Region_Type,Factory,Current_Location,Quantity,Cost_of_Batch,Price_per_Unit,Photos,QR_Code) VALUES ('ABCD124','purus','Bundles',32,'Curly wave','Aquamarine','Human Hair','Brazilian','Xuchang Longshengyuan Hair Products Co., Ltd','Kansas City, KS',14,14,14,'7.jpg','ABC-abc-1246');
+INSERT INTO inventory(Batch,Name,Product_Line,Length,Texture,Color,Hair_Type,Region_Type,Factory,Current_Location,Quantity,Cost_of_Batch,Price_per_Unit,Photos,QR_Code) VALUES ('ABCD125','viverra','Clip ons',8,'Romance wave','Black','Synthetic','Peruvian','Tianjin Yao Poly Import and Export Limited Company','Atlanta, GA',15,15,15,'1.jpg','ABC-abc-1247');
+INSERT INTO inventory(Batch,Name,Product_Line,Length,Texture,Color,Hair_Type,Region_Type,Factory,Current_Location,Quantity,Cost_of_Batch,Price_per_Unit,Photos,QR_Code) VALUES ('ABCD126','accumsan','Wigs',10,'Kinky curly','Brown Blonde','Blend','Malaysian','Shaoyang Hongtai Arts &Crafts Co., Ltd','Birmingham, Alabama',16,16,16,'2.jpg','ABC-abc-1248');
+INSERT INTO inventory(Batch,Name,Product_Line,Length,Texture,Color,Hair_Type,Region_Type,Factory,Current_Location,Quantity,Cost_of_Batch,Price_per_Unit,Photos,QR_Code) VALUES ('ABCD127','in','Bundles',12,'Wet and wavy','Red','Human Hair','Burmese','Guangzhou Alimina Hair Products Co., Ltd','Shanghai, China',17,17,17,'3.jpg','ABC-abc-1249');
+INSERT INTO inventory(Batch,Name,Product_Line,Length,Texture,Color,Hair_Type,Region_Type,Factory,Current_Location,Quantity,Cost_of_Batch,Price_per_Unit,Photos,QR_Code) VALUES ('ABCD128','nisl','Clip ons',14,'Silky straight','Teal','Synthetic','Indian','TedHair Factory','Kansas City, KS',18,18,18,'4.jpg','ABC-abc-1250');
+INSERT INTO inventory(Batch,Name,Product_Line,Length,Texture,Color,Hair_Type,Region_Type,Factory,Current_Location,Quantity,Cost_of_Batch,Price_per_Unit,Photos,QR_Code) VALUES ('ABCD129','nisi','Wigs',16,'Yaki','Blue','Blend','Mink','Kabeilu Hair Factory','Atlanta, GA',19,19,19,'5.jpg','ABC-abc-1251');
+INSERT INTO inventory(Batch,Name,Product_Line,Length,Texture,Color,Hair_Type,Region_Type,Factory,Current_Location,Quantity,Cost_of_Batch,Price_per_Unit,Photos,QR_Code) VALUES ('ABCD130','scelerisque','Bundles',18,'Coarse straight','Lavender','Human Hair','Brazilian','XBL Hair Factory','Birmingham, Alabama',20,20,20,'6.jpg','ABC-abc-1252');
+INSERT INTO inventory(Batch,Name,Product_Line,Length,Texture,Color,Hair_Type,Region_Type,Factory,Current_Location,Quantity,Cost_of_Batch,Price_per_Unit,Photos,QR_Code) VALUES ('ABCD131','eu','Clip ons',20,'Deep wave','Pink','Synthetic','Peruvian','Xuchang Fuxin Hair Products Co., Ltd','Shanghai, China',21,21,21,'7.jpg','ABC-abc-1253');
+INSERT INTO inventory(Batch,Name,Product_Line,Length,Texture,Color,Hair_Type,Region_Type,Factory,Current_Location,Quantity,Cost_of_Batch,Price_per_Unit,Photos,QR_Code) VALUES ('ABCD132','ultrices','Wigs',22,'Curly wave','Green','Blend','Malaysian','Xuchang Longshengyuan Hair Products Co., Ltd','Kansas City, KS',22,22,22,'1.jpg','ABC-abc-1254');
+INSERT INTO inventory(Batch,Name,Product_Line,Length,Texture,Color,Hair_Type,Region_Type,Factory,Current_Location,Quantity,Cost_of_Batch,Price_per_Unit,Photos,QR_Code) VALUES ('ABCD133','vitae','Bundles',24,'Romance wave','Ivory','Human Hair','Burmese','Tianjin Yao Poly Import and Export Limited Company','Atlanta, GA',23,23,23,'2.jpg','ABC-abc-1255');
+
 
 ### Download (Don't Clone) This Repository
 
@@ -72,40 +82,6 @@ CREATE TABLE inventory(
 * Run `npm run server`
 * Run `npm run client`
 * Navigate to `localhost:3000`
-
-## Base Mode
-
-On the Secure Submarine, there are many secrets, but our enemies are out to steal our secrets! We just realized that our Secure Submarine web portal (the portal for all of the hottest gossip on the secure submarine) is compromised! Anyone, logged in or not, can visit `http://localhost:5000/api/secrets` to see all of the secrets for the entire crew!
-
-### No Secrets for the Unauthenticated (Authentication)
-
-> Task: Only users who are authenticated should see any secrets.
-
-The user router is protected from unauthenticated requests thanks to the `rejectUnauthenticated` middleware:
-
-```JavaScript
-router.get('/', rejectUnauthenticated, (req, res) => {
-  res.send(req.user);
-});
-```
-
-Do this for the secrets route to achieve these results:
-
-- [ ] An unauthenticated user visiting `http://localhost:5000/api/secrets` should get a `403` or `forbidden` error instead of seeing the secrets.
-- [ ] A user like `Admiral Greer` with password `tuna` should still be able to visit `http://localhost:3000/#/secrets` to see all of the secrets.
-
-### No Secrets Above Clearance Level (Authorization)
-
-> Task: When authenticated, a user should only see secrets with a `secrecy_level` that is equal or less than the user's `clearance_level`.
-
-A user like `Captain Borodin` with password `shark` is be to visit `http://localhost:3000/#/secrets` to see all of the secrets! That's no good! There's a secret in there that calls him weird!
-
-You should see the clearance level in the console log inside of secrets GET request in `secrets.router.js`. Now fix the query in `secrets.router.js` so that it uses the clearance level to determine which secrets to return.
-
-- [ ] A user like `Captain Borodin` with password `shark` should no longer be able to see any secrets above his `clearance_level` which is `10`.
-- [ ] A user like `Admiral Greer` with password `tuna` should still be able to visit `http://localhost:3000/#/secrets` to see all of the secrets.
-
-## Stretch Goals
 
 ### Hashing
 
@@ -130,7 +106,6 @@ New users will now have their passwords hashed!
 Run these queries to add your users back to the database with hashed passwords:
 
 ```SQL
-DROP TABLE "user";
 
 CREATE TABLE "user" (
     "id" SERIAL PRIMARY KEY,
@@ -138,81 +113,3 @@ CREATE TABLE "user" (
     "password" VARCHAR (1000) NOT NULL,
     "clearance_level" INTEGER NOT NULL DEFAULT 0
 );
-
-INSERT INTO "user" ("username", "password", "clearance_level")
-VALUES ('Admiral Greer', '$2b$10$p5Wkte33hlOBOcUtJie6H.PnCvk8v.KjZspVoAFtT7g5v5xK.EXVG', 18),
-('Captain Borodin', '$2b$10$p5Wkte33hlOBOcUtJie6H.ZIgFjzr4zY8FItxC8gZyqIWD5gYmL0m', 10),
-('Lieutenant Nguyen', '$2b$10$p5Wkte33hlOBOcUtJie6H.vaUd5ikB1LWCbVZAA87BR63NiDorn1C', 4),
-('Lieutenant Ryan', '$2b$10$p5Wkte33hlOBOcUtJie6H.PnCvk8v.KjZspVoAFtT7g5v5xK.EXVG', 4);
-```
-
-### Salting
-Now that we are no longer storing plain text passwords. The enemy is unable to see the crew's passwords. However, Lieutenant Ryan has been careless, and the enemy knows that his password is `tuna`. Because of this, they can see the lowest security information. Then they notice that Admiral Greer's hashed password perfectly matches Lieutenant Ryan's hashed password! They now know that Admiral Greer's password is `tuna` as well! We should fix our code so that even if two people have the same password, it has a different hash in the database. Enter salting! Salting is the process of generating a random string for each user. Notice that every password starts with `$2b$10$p5Wkte33hlOBOcUtJie6H.`. That is the salt! These should be random and generated uniquely for each user.
-
-Uncomment these two lines to start creating a unique salt for each user.
-
-```JavaScript
-const salt = bcrypt.genSaltSync(SALT_WORK_FACTOR); // This generates a random salt
-```
-
-```JavaScript
-return bcrypt.hashSync(password, salt);
-```
-
-New users will now have their passwords salted and hashed!
-
-Run these queries to add your users back to the database with hashed passwords:
-
-```SQL
-DROP TABLE "user";
-
-CREATE TABLE "user" (
-    "id" SERIAL PRIMARY KEY,
-    "username" VARCHAR (80) UNIQUE NOT NULL,
-    "password" VARCHAR (1000) NOT NULL,
-    "clearance_level" INTEGER NOT NULL DEFAULT 0
-);
-
-INSERT INTO "user" ("username", "password", "clearance_level")
-VALUES ('Admiral Greer', '$2b$10$uxPm0qeJAz70oqhEg8dX6uXlYc2PWUtPuZhTa65OiDv2LCHA41OLq', 18),
-('Captain Borodin', '$2b$10$iUCrWSMvLpYuKQLsmmTiNe3gfU6jAdyElCbCLtboVH6DlXJdsuPxG', 10),
-('Lieutenant Nguyen', '$2b$10$/3yhbbjXPPf3L4Z1gXDA5OJzJkf6b.2CuvIA8OzP6c8jPEQlbo5re', 4),
-('Lieutenant Ryan', '$2b$10$hr1Tlo6K.yxAq3FC4iIHsuYQwYpjQC8SyDnYykMu/LNB9TXMkxMt2', 4);
-```
-
-Admiral Greer and Lieutenant Ryan still have the same passwords as before, but it's not easy to see that because of salting and hashing.
-
-### Create an Environment Variable
-`SERVER_SESSION_SECRET` is supposed to be a secret, but right now we are pushing it to GitHub! Let's create an environment variable so that we don't do this.
-
-* Uncomment `// return process.env.SERVER_SESSION_SECRET;` in `session-middleware.js`
-* Run `npm install dotenv` to get the node module that can create environment variables
-* Add the line `require('dotenv').config();` to the top of `server.js` to use the module
-* add `.env` to your `.gitignore` file
-* Create a `.env` file at the root of the project and paste this line into the file:
-    ```
-    SERVER_SESSION_SECRET=superDuperSecret
-    ```
-    While you're in your new `.env` file, take the time to replace `superDuperSecret` with some long random string like `25POUbVtx6RKVNWszd9ERB9Bb6` to keep your application secure. Here's a site that can help you: [https://passwordsgenerator.net/](https://passwordsgenerator.net/).
-
-### Production Build
-
-Before pushing to Heroku, run `npm run build` in terminal. This will create a build folder that contains the code Heroku will be pointed at. You can test this build by typing `npm start`. Keep in mind that `npm start` will let you preview the production build but will **not** auto update.
-
-* Start postgres if not running already by using `brew services start postgresql`
-* Run `npm start`
-* Navigate to `localhost:5000`
-
-### Deployment
-
-1. Create a new Heroku project
-2. Link the Heroku project to the project GitHub Repo
-3. Create an Heroku Postgres database
-4. Connect to the Heroku Postgres database from Postico
-5. Create the necessary tables
-6. Add an environment variable for `SERVER_SESSION_SECRET` with a nice random string for security
-7. In the deploy section, select manual deploy
-
-### Update Documentation
-
-
