@@ -12,6 +12,7 @@ const userRouter = require('./routes/user.router');
 const secretsRouter = require('./routes/secrets.router');
 const allusersRouter = require('./routes/allusers.router');
 const inventoryRouter = require('./routes/inventory.router');
+const imageurlRouter = require('./routes/image-url.router');
 
 const UploaderS3Router = require('react-dropzone-s3-uploader/s3router');
 
@@ -32,6 +33,7 @@ app.use('/api/user', userRouter);
 app.use('/api/secrets', secretsRouter);  // Might not need?
 app.use('/api/allusers', allusersRouter); // Might not need?
 app.use('/api/inventory', inventoryRouter);
+app.use('/api/imageurl', imageurlRouter);
 
 app.use('/s3', UploaderS3Router({
   bucket: 'ktjinventory',                           // required

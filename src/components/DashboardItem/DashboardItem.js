@@ -44,7 +44,7 @@ class DashboardItem extends Component {
     render(){
         return(
             <div className="card">
-                    <img src={`images/${this.props.photos}`} alt={this.props.inventoryId}/>
+                    <img src={this.props.photos} alt={this.props.inventoryId}/>
                     <div className="container">
                         <div>
                         {this.state.inventoryIsEditable ?
@@ -63,7 +63,7 @@ class DashboardItem extends Component {
                             quantity={this.props.quantity}
                             cost_of_batch={this.props.cost_of_batch}
                             price_per_unit={this.props.price_per_unit}
-                            photos={this.props.photos}
+                            // photos={this.props.photos}
                             qr_code={this.props.qr_code}
                         />
                         :
@@ -85,7 +85,7 @@ class DashboardItem extends Component {
                                 <p>Quantity: {this.props.quantity}</p>
                                 <p>Cost of Batch: {this.props.cost_of_batch}</p>
                                 <p>Price per Unit: {this.props.price_per_unit}</p>
-                                <p>Image: {this.props.photos}</p>
+                                {/* <p>Image: {this.props.photos}</p> */}
                                 <p>QR Code: {this.props.qr_code}</p>
                             </div>
                         </div>

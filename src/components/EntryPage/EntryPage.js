@@ -7,6 +7,9 @@ import ImageUpload from '../ImageUpload/ImageUpload';
 
 
 class EntryPage extends Component {
+  constructor(props) {
+    super(props);
+    };
  
 
     state = {
@@ -29,13 +32,19 @@ class EntryPage extends Component {
         }
     }
 
+    componentDidMount() {
+      this.props.dispatch({type: 'CLEAR_CURRENT_IMAGE'});
+    }
+
     clickMe = (event) => {
         event.preventDefault();
+        
+
         this.props.dispatch({
           type: 'POST_INVENTORY',
           payload : {
             ...this.state.inventoryEntry,
-            // ADD IMAGE URL imageUrl: this.reduxState.WHATEVER_IMAGE
+            photos: this.props.reduxState.currentImageReducer
           }
         });
         this.props.history.push('/home')
@@ -77,6 +86,20 @@ class EntryPage extends Component {
   }
 
   render() {
+
+    let imageElement = <div></div>;
+
+    if (this.props.reduxState.currentImageReducer) {
+      imageElement = (
+        <div>
+          <p>Selected Image: </p>
+          <p>{this.props.reduxState.currentImageReducer}</p>
+        </div>
+      )
+    } else {
+      imageElement = <ImageUpload />
+    }
+
     return (
         <form className="form" onSubmit={this.clickMe}>
                 <input type="text" placeholder="batch" value={this.state.enteredbatch} name="batch"onChange={this.changeHandle}/>
@@ -92,9 +115,9 @@ class EntryPage extends Component {
                 <input type="number" placeholder="quantity" value={this.state.enteredquantity} name="quantity"onChange={this.changeHandle}/>
                 <input type="number" placeholder="cost_of_batch" value={this.state.enteredcost_of_batch} name="cost_of_batch"onChange={this.changeHandle}/>
                 <input type="number" placeholder="price_per_unit" value={this.state.enteredprice_per_unit} name="price_per_unit"onChange={this.changeHandle}/>
-                <input type="text" placeholder="photos" value={this.state.enteredphotos} name="photos"onChange={this.changeHandle}/>
+                {/* <input type="text" placeholder="photos" value={this.state.enteredphotos} name="photos"onChange={this.changeHandle}/> */}
                 <input type="text" placeholder="qr_code" value={this.state.enteredqr_code} name="qr_code"onChange={this.changeHandle}/>
-                <ImageUpload />
+                {imageElement}
                 <button className="saveupdatebtn">Submit</button>
         </form>
     );

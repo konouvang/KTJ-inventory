@@ -18,7 +18,7 @@ router.post('/', (req, res) => {
     const imageUrl = req.body.imageUrl;
 
     const queryText = `INSERT INTO "inventory" (photos) VALUES ($1) WHERE id=$2;`;
-    const queryValues = [photos];
+    const queryValues = [imageUrl];
 
     console.log('queryValues: ', queryValues);
     pool.query(queryText, queryValues)

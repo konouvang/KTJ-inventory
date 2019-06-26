@@ -6,6 +6,7 @@ import secrets from './secretsReducer';
 import inventoryReducer from './inventoryReducer';
 import entryReducer from './entryReducer';
 import updateReducer from './updateReducer';
+import currentImageReducer from './currentImageReducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -21,6 +22,7 @@ const rootReducer = combineReducers({
   inventoryReducer,
   entryReducer,
   updateReducer,
+  currentImageReducer,
 });
 
 export default rootReducer;
