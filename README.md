@@ -1,3 +1,5 @@
+_duration: 2 weeks _
+
 ## KTJ Inventory
 KTJ is an inventory app for Melody 21 hair extensions. The application has 3 key features, Dashboard, Entry and Master Data. Dashboard displays all inventory items in an easy to view interface. From here, users can update and delete inventory items. The Entry page allows users to enter new inventory items. Last but not least is the MasterData page. If you want your inventory item data to be easily quantifiable the data must be stored in a spreadsheet. On this page, we can extract the data into an excel sheet.
 
